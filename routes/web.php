@@ -1,5 +1,7 @@
 <?php
 
-use App\Http\Controllers\BookController;
+use App\Http\Controllers\GoogleController;
 
-Route::resource('books', BookController::class);
+Route::get('auth/google', [GoogleController::class, 'redirectToGoogle']);
+Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback']);
+
